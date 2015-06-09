@@ -1,2 +1,2 @@
-apt: build-dep php5-cli
+apt: apt-get build-dep -y php5-cli
 brew: curl freetype gettext gmp icu4c imap-uw jpeg libpng libxml2 openssl unixodbc zlib

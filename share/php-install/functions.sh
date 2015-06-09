@@ -20,14 +20,23 @@ function pre_install()
 #
 function install_deps()
 {
-	local packages="$(fetch "$PHP/dependencies" "$PACKAGE_MANAGER")"
+    if [ "${NO_INSTALL_DEPS}" == "1" ]; then
+        return 0
+    fi
 
-	if [[ -n "$packages" ]]; then
-		log "Installing dependencies for $PHP $PHP_VERSION ..."
-		install_packages $packages
+	local $packages="$(fetch "$PHP/dependencies" "$PACKAGE_MANAGER")"
+	if [[ -z "$packages" ]]; then
+        return 0
 	fi
 
-	install_optional_deps
+    log "Installing dependencies for $PHP $PHP_VERSION ..."
+
+    if [ "$PACKAGE_MANAGER" == 'apt' ]; then
+        $SUDO ${packages}
+        return 0
+    fi
+
+    install_packages $packages
 }
 
 #
