@@ -1,5 +1,5 @@
 NAME=php-install
-VERSION=0.0.3
+VERSION=0.0.4
 AUTHOR=marcosdsanchez
 URL=https://github.com/$(AUTHOR)/$(NAME)
 
@@ -17,9 +17,7 @@ PREFIX?=/usr/local
 DOC_DIR=$(PREFIX)/share/doc/$(PKG_NAME)
 
 pkg:
-	mkdir $(PKG_DIR)
-
-share/man/man1/php-install.1: doc/man/php-install.1.md
+	mkdir $(PKG_DIR)share/man/man1/php-install.1: doc/man/php-install.1.md
 	kramdown-man doc/man/php-install.1.md > share/man/man1/php-install.1
 
 man: doc/man/php-install.1.md share/man/man1/php-install.1

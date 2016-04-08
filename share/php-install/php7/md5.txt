@@ -1,0 +1,1 @@
+php-7.0.5.tar.bz2:  b15e6836babcbf0aa446678ee38f896b

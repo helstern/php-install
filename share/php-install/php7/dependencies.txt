@@ -1,0 +1,1 @@
+apt: autoconf bison libxml2-dev systemtap-sdt-dev openssl pkg-config libssl-dev libcurl4-openssl-dev libbz2-dev libgdbm-dev libjpeg62 libjpeg62-dev libpng12-0 libpng12-dev libfreetype6-dev libicu-dev libiodbc2-dev libxslt1-dev apache2-dev
